@@ -6,9 +6,6 @@ services:
     rootDir: backend
     buildCommand: "npm install"
     startCommand: "npm start"
-    env:
-      MONGO_URI: "your-mongodb-uri"
-      PORT: "10000"
 
   - type: web
     name: attendance-frontend
