@@ -6,11 +6,9 @@ services:
     rootDir: backend
     buildCommand: "npm install"
     startCommand: "npm start"
-    envVars:
-      - key: MONGO_URI
-        value: "your-mongodb-uri"
-      - key: PORT
-        value: "10000"
+    env:
+      MONGO_URI: "your-mongodb-uri"
+      PORT: "10000"
 
   - type: web
     name: attendance-frontend
@@ -19,12 +17,5 @@ services:
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: "build"
-    envVars:
-      - key: REACT_APP_API_URL
-        value: "https://attendance-backend.onrender.com"
-envVars:
-  - key: MONGO_URI
-    value: "mongodb+srv://<username>:<password>@cluster0.mongodb.net/attendanceDB?retryWrites=true&w=majority"
-  - key: PORT
-    value: "10000"
-
+    env:
+      REACT_APP_API_URL: "https://attendance-backend.onrender.com"
