@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: attendance-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: MONGO_URI
+        value: "your-mongodb-uri"
+      - key: PORT
+        value: "10000"
+
+  - type: web
+    name: attendance-frontend
+    env: static
+    plan: free
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "build"
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://attendance-backend.onrender.com"
+
