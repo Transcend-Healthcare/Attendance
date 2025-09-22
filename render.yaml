@@ -17,5 +17,3 @@ services:
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: "build"
-    env:
-      REACT_APP_API_URL: "https://attendance-backend.onrender.com"
